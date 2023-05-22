@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python:
+    build:
+      dockerfile: Dockerfile
+    tty: true
+    container_name: python-container
+    volumes:
+      - ./:/var/projects/python
+    workdir: /var/projects/python
