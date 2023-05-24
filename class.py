@@ -2,6 +2,7 @@ from typing import Any
 
 
 class Tea:
+    WHAT_IS_TEA = 'tea'
     name = None
     water = 0
     temperature = None
@@ -41,7 +42,7 @@ class LvTea(Tea):
     def __call__(self):
         print("LvTea __call__")
 
-lv_tea = LvTea()
+# lv_tea = LvTea()
 # lv_tea.add_water(100)
 # print(lv_tea.name, lv_tea.water, lv_tea.temperature)
 # LvTea.show()
@@ -51,6 +52,6 @@ lv_tea = LvTea()
 
 # print(dir(LvTea()))
 
-lv_tea()
+# lv_tea()
 
-
+print(Tea.WHAT_IS_TEA, Tea.name)
