@@ -14,16 +14,20 @@ with open('data.csv', 'w', newline='') as csvfile:
     # 写入表头
     writer.writerow(['year', 'month', 'day', 'week', 'temp-2', 'temp-1', 'average', 'actual'])
 
+    prev_1 = 45
+    prev_2 = 45
+
     # 生成每一天的数据
     for date in date_range:
         year = date.year
         month = date.month
         day = date.day
         weekday = date.strftime('%A')
-        temperature_2 = random.randint(0, 30)  # 前俩天的温度
-        temperature_1 = random.randint(0, 30)  # 前一天的温度
         historical_avg = random.randint(0, 30)  # 历史以来当天的平均温度
         temperature = random.randint(0, 30)  # 当天的温度
 
         # 写入一行数据
-        writer.writerow([year, month, day, weekday, temperature_2, temperature_1, historical_avg, temperature])
+        writer.writerow([year, month, day, weekday, prev_2, prev_1, historical_avg, temperature])
+        
+        temperature_2 = random.randint(0, 30)  # 前俩天的温度
+        temperature_1 = random.randint(0, 30)  # 前一天的温度
